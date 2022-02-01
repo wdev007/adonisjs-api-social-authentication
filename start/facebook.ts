@@ -14,17 +14,16 @@ Route.get('facebook', async ({ response }) => {
 })
 
 Route.get('/facebook/redirect', async ({ ally }) => {
-  console.log('facebooooooook')
   return ally.use('facebook').redirect((request) => {
     request.scopes(['email'])
-    request.param('redirect_uri', 'https://dcec-186-208-79-109.ngrok.io/facebook/callback')
+    request.param('redirect_uri', 'https://7bd9-186-208-79-109.ngrok.io/facebook/callback')
   })
 })
 
 Route.get('/facebook/callback', async ({ ally }) => {
   try {
     const facebook = ally.use('facebook')
-    console.log('face: ', facebook)
+
     if (facebook.accessDenied()) {
       return 'Access was denied'
     }
@@ -38,7 +37,7 @@ Route.get('/facebook/callback', async ({ ally }) => {
     }
 
     const user = await facebook.user()
-    console.log('user: ', user)
+
     return user
   } catch (error) {
     console.log({ error: error.response })

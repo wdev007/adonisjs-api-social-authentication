@@ -26,13 +26,3 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
-
-// Route.get('/google/redirect', async ({ ally }) => {
-//   return ally.use('google').redirect()
-// })
-
-// Route.get('/google/callback', async ({ ally }) => {
-//   const google = ally.use('google')
-
-//   console.log(google)
-// })

@@ -16,7 +16,7 @@ Route.get('google', async ({ response }) => {
 Route.get('/google/redirect', async ({ ally }) => {
   return ally.use('google').redirect((request) => {
     request.scopes(['email'])
-    request.param('redirect_uri', 'https://dcec-186-208-79-109.ngrok.io/google/callback')
+    request.param('redirect_uri', 'https://7bd9-186-208-79-109.ngrok.io/google/callback')
   })
 })
 
